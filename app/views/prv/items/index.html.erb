@@ -1,0 +1,62 @@
+<h3>
+  Товары
+</h3>
+
+<%= link_to 'Добавить', new_prv_item_path, class: 'btn btn-small btn-info' %>
+
+<div class="space-16"></div>
+
+<div id="content">
+
+  <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+    <% first = true %>
+    <% Category.active.each do |c| %>
+        <li class="<%= 'active' if first %>"><a href="#<%= c.link %>" data-toggle="tab"><%= c.name %></a></li>
+        <% first = false %>
+    <% end %>
+  </ul>
+
+  <div id="my-tab-content" class="tab-content">
+    <% first = true %>
+    <% Category.active.each do |c| %>
+
+        <div class="tab-pane <%= 'active' if first %>" id="<%= c.link %>">
+          <% first = false %>
+
+          <table class="table table-bordered">
+            <thead>
+            <tr>
+              <th>Название</th>
+              <th>Категория</th>
+              <th>Количество фотографий</th>
+              <th></th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <% @prv_items.where(category_id: c).each do |prv_item| %>
+                <tr>
+                  <td><%= prv_item.title %></td>
+                  <td><%= prv_item.category.name %></td>
+                  <td><%= prv_item.item_attachments.count %></td>
+                  <td>
+                    <%= link_to edit_prv_item_path(prv_item), class: 'btn btn-info btn-mini' do %>
+                        <i class="icon-edit bigger"></i>
+                    <% end %>
+                  </td>
+                  <td>
+                    <%= link_to prv_item_path(prv_item), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-mini' do %>
+                        <i class="icon-trash bigger"></i>
+                    <% end %>
+                  </td>
+                </tr>
+            <% end %>
+
+            </tbody>
+          </table>
+        </div>
+    <% end %>
+
+  </div>
+</div>

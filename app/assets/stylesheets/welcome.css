@@ -1,0 +1,90 @@
+html, body, .wrap {
+    height: 100%;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+body > .wrap {
+    height: auto;
+    min-height: 100%;
+}
+
+.main {
+    padding-bottom: 150px;
+    padding-top: 30px;
+}
+
+/* отступ должен быть равен высоте футера */
+
+.footer {
+    position: relative;
+    margin-top: -100px; /* отрицательное значение высоты футера */
+    height: 100px;
+    clear: both;
+    font-size: 11px;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+/* Hides from IE-mac \*/
+* html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
+.hovered{
+    color: #464646;
+}
+.hovered:hover{
+    background-color: rgba(19, 255, 87, 0.07);
+}
+
+/* End hide from IE-mac */
+.nav-list {
+    text-align: right;
+}
+.nav-list li {
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 5px;
+    border-bottom: none;
+}
+
+.nav-list li a {
+    cursor: default;
+    text-decoration: none;
+}
+
+.footer-nav-list {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0;
+}
+
+.footer-nav-list li {
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 25px;
+    border-bottom: none;
+}
+
+.footer-nav-list li a {
+    cursor: default;
+    text-decoration: none;
+    font-size: 13px;
+}
+.flex-direction-nav a {
+    height: 16px!important;
+}

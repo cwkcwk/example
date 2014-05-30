@@ -1,0 +1,24 @@
+<% @articles.each do |article| %>
+    <%= link_to article_productions_path(link: article.link) do %>
+        <div class="row-fluid article" style="width: 98%;color: #535353">
+
+          <div class="span4">
+            <%= image_tag(asset_path(article.image.url(:thumb)), width: 200, height: 200, title: article.title) %>
+          </div>
+
+          <div class="span7">
+            <div class="row-fluid">
+              <h2>
+                <%= article.title %>
+              </h2>
+            </div>
+
+            <div class="row-fluid">
+              <%= article.preview %>
+            </div>
+
+          </div>
+
+        </div>
+    <% end %>
+<% end %>

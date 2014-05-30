@@ -1,0 +1,28 @@
+<h1>
+  Категории товаров
+</h1>
+
+<div class="space-20"></div>
+
+<% @categories.each do |category| %>
+    <%= link_to goods_catalogs_path(category.link) do %>
+
+        <div class="row-fluid hovered">
+
+          <div class="span4">
+            <%= image_tag(asset_path(category.image.url(:large)), width: 300, height: 300) %>
+          </div>
+
+          <div class="span6">
+            <h2>
+              <%= category.name %>
+            </h2>
+
+            <p>
+              <%= category.description %>
+            </p>
+          </div>
+        </div>
+
+    <% end %>
+<% end %>

@@ -1,0 +1,51 @@
+<h1>
+  Контакты
+</h1>
+
+<p>
+  <strong> Телефон: </strong> +7(960) 506-34-55
+</p>
+
+<p>
+  <strong> Email: </strong>
+  <a href="mailto:sales.horizont@gmail.com?subject=Заказ" target="_blank">sales.horizont@gmail.com</a>
+</p>
+
+<p>
+  <strong> Факс: </strong> +7 (4932) 58-58-98
+</p>
+
+<p>
+  <strong> Адрес: </strong> Ивановская область, Комсомольский район,
+  с. Подозерский, ул. Индустриальная, дом 1А.
+</p>
+
+<p><strong>Наше местоположение на карте:</strong></p>
+
+
+<div id="map" style="width: 1000px; height: 400px"></div>
+<script>
+
+    ymaps.ready(init);
+
+    var myMap, myPlacemark;
+
+    function init() {
+        myMap = new ymaps.Map("map",
+                {
+                    center: [57.216513, 40.340009],
+                    zoom: 16
+                });
+        myMap.controls
+                .add('zoomControl', { left: 10, top: 10 })
+                .add('typeSelector');
+
+        myPlacemark = new ymaps.Placemark([57.216513, 40.340009],
+                {
+                    hintContent: 'Мы здесь!',
+                    balloonContent: 'Комсомольский район, с. Подозерский, ул. Индустриальная, дом 1А'
+                });
+
+        myMap.geoObjects.add(myPlacemark);
+    }
+</script>

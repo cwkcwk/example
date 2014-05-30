@@ -1,0 +1,35 @@
+.item-description {
+    text-indent: 10px;
+    height: 100px;
+    overflow: hidden;
+}
+.item-container {
+    overflow: hidden;
+    width: 480px;
+    height: 480px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid rgba(32, 27, 61, 0.31);
+    border-radius: 5px;
+    cursor: default;
+}
+.item-container:hover {
+    background-color: rgba(0, 251, 0, 0.03);
+}
+
+.scales{
+    border: 1px solid rgba(24, 24, 24, 0.24);
+}
+.scales li {
+    border-bottom: 1px solid rgba(24, 24, 24, 0.24);
+    height: 20px;
+}
+.scale-title {
+    background-color: rgba(58, 135, 173, 0.4) !important;
+}
+.scale-title label {
+    font-size: 17px;
+}
+.scale-element label{
+    font-size: 11px;
+}

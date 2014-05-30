@@ -1,0 +1,46 @@
+<%= form_for [:prv, @slider], html: {class: 'form-horizontal'} do |f| %>
+
+
+    <% if @slider.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@prv_item.errors.count, "error") %> prohibited this prv_item from being saved:</h2>
+
+          <ul>
+            <% @slider.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <legend>
+      Элемент слайдера на главной
+    </legend>
+
+    <div class="control-group">
+      <%= f.label :title, class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :title %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :is_active, class: 'control-label' %>
+      <div class="controls">
+        <%= f.check_box :is_active %>
+        <label class="lbl"></label>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :image, class: 'control-label' %>
+      <div class="controls">
+        <%= f.file_field :image %>
+        <%= image_tag(asset_path(f.object.image.url(:preview)), width: 335, height: 125) %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit 'Сохранить', class: 'btn btm-mini btm-success' %>
+    </div>
+<% end %>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Горизонт</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU"></script>
+  <%= favicon_link_tag 'favico.ico' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="header green">
+    <%= render 'pages/header' %>
+  </div>
+
+  <div class="main clearfix">
+    <%= yield %>
+  </div>
+
+</div>
+
+<div class="footer">
+  <%= render 'pages/footer' %>
+</div>
+
+
+</body>
+</html>

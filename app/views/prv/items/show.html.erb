@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @prv_item.title %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @prv_item.category_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @prv_item.description %>
+</p>
+
+<%= link_to 'Edit', edit_prv_item_path(@prv_item) %> |
+<%= link_to 'Back', prv_items_path %>

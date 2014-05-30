@@ -1,0 +1,38 @@
+<style>
+
+</style>
+
+<div class="row-fluid">
+  <div class="span6 pull-left">
+    <%= link_to root_path do %>
+        <%= image_tag(asset_path('logo.png'), height: '60', width: '140') %>
+        <h3 style="padding-top: 5px">
+          ООО "Горизонт-текстиль"
+        </h3>
+    <% end %>
+  </div>
+  <div class="span6 pull-right">
+    <ul class="nav-list">
+      <li>
+        <%= link_to 'Каталог', catalogs_path %>
+      </li>
+      <li>
+        <%= link_to 'Логистика', logistics_path %>
+      </li>
+      <li>
+        <%= link_to 'Контакты', contacts_path %>
+      </li>
+      <li>
+        <%= link_to 'О продукции', productions_path %>
+      </li>
+    </ul>
+    <div class="row-fluid">
+      <div class="span12">
+        <h3 class="pull-right">
+          <i class="fa fa-phone"></i> +7(960) 506-34-55
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,6 @@
+.article {
+    padding: 10px;
+}
+.article:hover {
+    background-color: rgba(0, 41, 255, 0.03);
+}

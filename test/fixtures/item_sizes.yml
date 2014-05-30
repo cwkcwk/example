@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  height: MyString
+  scale: MyString
+  item_id: 1
+
+two:
+  height: MyString
+  scale: MyString
+  item_id: 1
