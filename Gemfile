@@ -51,7 +51,7 @@ end
 
 group :development, :test do
   gem 'capistrano-nginx-unicorn'
-  #  gem 'sqlite3'
+  gem 'sqlite3'
   gem 'activerecord-jdbc-adapter'
   gem 'jdbc-sqlite3'
 
