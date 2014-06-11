@@ -19,7 +19,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: mysql2
+   encoding: utf8
+   username: root
+   password: PdiyZYE8jn
+   port: 3306
+   host: 37.143.11.80
+   database: skyline
