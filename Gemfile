@@ -51,7 +51,7 @@ end
 
 group :development do
   gem 'capistrano-nginx-unicorn'
-  gem 'sqlite3'
+  # gem 'sqlite3'
 end
 
 group :doc do
