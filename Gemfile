@@ -49,9 +49,12 @@ group :production do
   gem 'unicorn-worker-killer'
 end
 
-group :development do
+group :development, :test do
   gem 'capistrano-nginx-unicorn'
-  # gem 'sqlite3'
+  #  gem 'sqlite3'
+  gem 'activerecord-jdbc-adapter'
+  gem 'jdbc-sqlite3'
+
 end
 
 group :doc do
