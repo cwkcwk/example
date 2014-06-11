@@ -15,7 +15,7 @@ role :db,  %w{root@37.143.11.80}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'root@37.143.11.80', user: 'root', roles: %w{web app db}, my_property: :my_value
+server '37.143.11.80', user: 'root', roles: %w{web app db}
 
 
 # Custom SSH Options

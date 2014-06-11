@@ -2,8 +2,8 @@
 require 'capistrano/setup'
 
 # Includes default deployment tasks
-require 'capistrano/rvm'
 require 'capistrano/deploy'
+require 'capistrano/rvm'
 require 'capistrano/rails'
 require 'capistrano/nginx_unicorn'
 require 'capistrano/rails/assets'
