@@ -15,6 +15,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 
+gem 'whenever'
+
 gem 'execjs'
 
 gem 'therubyracer', :platforms => :ruby
