@@ -34,6 +34,10 @@ namespace :deploy do
     end
   end
 
+  task :seed do
+    run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
+  end
+  
   after :publishing, :restart
 
   after :restart, :clear_cache do
