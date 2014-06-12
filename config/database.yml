@@ -22,7 +22,7 @@ production:
   adapter: mysql2
   encoding: utf8
   username: root
-  password: PdiyZYE8jn
+  password: 8142057qw
   port: 3306
   host: 37.143.11.80
   database: skyline
