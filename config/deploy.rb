@@ -34,10 +34,6 @@ namespace :deploy do
     end
   end
 
-  task :seed do
-    run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
-  end
-  
   after :publishing, :restart
 
   after :restart, :clear_cache do
@@ -50,3 +46,13 @@ namespace :deploy do
   end
 
 end
+
+namespace :db do
+  task :recreate do
+    run "cd #{current_path}; RAILS_ENV=production bin/bundle exec rake db:drop"
+    run "cd #{current_path}; RAILS_ENV=production bin/bundle exec rake db:create"
+    run "cd #{current_path}; RAILS_ENV=production bin/bundle exec rake db:migrate"
+    run "cd #{current_path}; RAILS_ENV=production bin/bundle exec rake db:seed"
+  end
+end
+
