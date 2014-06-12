@@ -21,8 +21,8 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  username: root
-  password: 8142057qw
+  username: skyline
+  password: gssaSqkkn
   port: 3306
   host: 37.143.11.80
   database: skyline
