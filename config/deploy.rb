@@ -46,13 +46,3 @@ namespace :deploy do
   end
 
 end
-
-namespace :db do
-  task :recreate do
-    run "cd #{current_path}; RAILS_ENV=production bin/bundle exec rake db:drop"
-    run "cd #{current_path}; RAILS_ENV=production bin/bundle exec rake db:create"
-    run "cd #{current_path}; RAILS_ENV=production bin/bundle exec rake db:migrate"
-    run "cd #{current_path}; RAILS_ENV=production bin/bundle exec rake db:seed"
-  end
-end
-
