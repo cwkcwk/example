@@ -13,6 +13,7 @@ class Category < ActiveRecord::Base
                     styles: {
                         thumb: '100x100',
                         large: '300x300#',
+                        preview: '300x450'
                     }
 
   # validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/

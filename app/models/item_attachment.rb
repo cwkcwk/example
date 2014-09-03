@@ -7,7 +7,7 @@ class ItemAttachment < ActiveRecord::Base
                     styles: {
                         thumb: '100x100',
                         large: '663x939',
-                        preview: '300x250'
+                        preview: '440x'
                     }
 
 end
