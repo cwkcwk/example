@@ -29,7 +29,7 @@ module Prv
 
       respond_to do |format|
         if @prv_item.save
-          format.html { redirect_to prv_item_path(@prv_item), notice: 'Item was successfully created.' }
+          format.html { redirect_to edit_prv_item_path(@prv_item), notice: 'Item was successfully created.' }
           format.json { render action: 'show', status: :created, location: @prv_item }
         else
           format.html { render action: 'new' }
@@ -43,7 +43,7 @@ module Prv
     def update
       respond_to do |format|
         if @prv_item.update(prv_item_params)
-          format.html { redirect_to prv_item_path(@prv_item), notice: 'Item was successfully updated.' }
+          format.html { redirect_to edit_prv_item_path(@prv_item), notice: 'Item was successfully updated.' }
           format.json { head :no_content }
         else
           format.html { render action: 'edit' }
