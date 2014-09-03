@@ -88,3 +88,8 @@ body > .wrap {
 .flex-direction-nav a {
     height: 16px!important;
 }
+
+.description p{
+    text-indent: 10px;
+    text-align: justify;
+}
