@@ -24,14 +24,28 @@
       <div class="control-group">
         <%= f.label 'Вступление', class: 'control-label' %>
         <div class="controls">
-          <%= f.text_area :preview, rows: 5, style: 'width: 400px;' %>
+          <%= f.cktext_area :preview,
+                            style: 'width: 500px; height: 300px;',
+                            ckeditor:
+                                    {
+                                            height: '140px',
+                                            language: 'ru',
+                                            toolbarGroups: ['styles', '']
+                                    } %>
         </div>
       </div>
 
       <div class="control-group">
         <%= f.label 'Статья', class: 'control-label' %>
         <div class="controls">
-          <%= f.text_area :body, rows: 10, style: 'width: 400px;' %>
+          <%= f.cktext_area :body,
+                            style: 'width: 500px; height: 300px;',
+                            ckeditor:
+                                    {
+                                            height: '350px',
+                                            language: 'ru',
+                                            toolbarGroups: ['styles', '']
+                                    } %>
         </div>
       </div>
 
