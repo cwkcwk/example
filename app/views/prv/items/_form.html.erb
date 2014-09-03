@@ -34,14 +34,7 @@
       <div class="control-group">
         <%= f.label 'Описание', class: 'control-label' %>
         <div class="controls">
-          <%= f.cktext_area :description,
-                            style: 'width: 500px; height: 300px;',
-                            ckeditor:
-                                    {
-                                            height: '350px',
-                                            language: 'ru',
-                                            toolbarGroups: ['styles', '']
-                                    } %>
+          <%= f.text_area :description, style: 'width: 500px; height: 300px;' %>
         </div>
       </div>
     </div>
