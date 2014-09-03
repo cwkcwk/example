@@ -27,6 +27,7 @@ module Skyline
     # config.i18n.default_locale = :de
 
     config.autoload_paths += %W(#{config.root}/lib)
-
+    config.assets.precompile += Ckeditor.assets
+    
   end
 end
