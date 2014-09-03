@@ -24,6 +24,8 @@ set :rails_env, 'production'
 
 set :unicorn_workers, 1
 
+set :linked_dirs, fetch(:linked_dirs) + %w{public/system public/uploads}
+
 namespace :deploy do
 
   desc 'Restart application'
