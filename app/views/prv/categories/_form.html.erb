@@ -15,22 +15,22 @@
 
     <div class="row-fluid">
       <div class="control-group">
-        <%= f.label :name, class: 'control-label' %>
+        <%= f.label 'Название', class: 'control-label' %>
         <div class="controls">
           <%= f.text_field :name %>
         </div>
       </div>
 
       <div class="control-group">
-        <%= f.label :is_active, class: 'control-label' %>
+        <%= f.label 'Категория активна?', class: 'control-label' %>
         <div class="controls">
-          <%= f.check_box :is_active %>
+          <%= f.check_box :is_active, style: 'position: absolute!important; z-index:33!important;' %>
           <label class="lbl"></label>
         </div>
       </div>
 
       <div class="control-group">
-        <%= f.label :description, class: 'control-label' %>
+        <%= f.label 'Описание', class: 'control-label' %>
         <div class="controls">
           <%= f.text_area :description, rows: 4, style: 'width:400px;' %>
           <label class="lbl"></label>
@@ -38,9 +38,9 @@
       </div>
 
       <div class="control-group">
-        <%= f.label :image, class: 'control-label' %>
+        <%= f.label 'Картинка', class: 'control-label' %>
         <div class="controls">
-          <%= f.file_field :image%>
+          <%= f.file_field :image %>
           <%= image_tag(asset_path(f.object.image.url(:thumb))) %>
         </div>
       </div>

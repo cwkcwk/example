@@ -6,7 +6,7 @@ class ItemAttachment < ActiveRecord::Base
   has_attached_file :image,
                     styles: {
                         thumb: '100x100',
-                        large: '300x500',
+                        large: '663x939',
                         preview: '300x250'
                     }
 

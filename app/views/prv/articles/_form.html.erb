@@ -15,36 +15,36 @@
     <div class="row-fluid">
 
       <div class="control-group">
-        <%= f.label :title, class: 'control-label' %>
+        <%= f.label 'Заголовок', class: 'control-label' %>
         <div class="controls">
           <%= f.text_field :title %>
         </div>
       </div>
 
       <div class="control-group">
-        <%= f.label :preview, class: 'control-label' %>
+        <%= f.label 'Вступление', class: 'control-label' %>
         <div class="controls">
           <%= f.text_area :preview, rows: 5, style: 'width: 400px;' %>
         </div>
       </div>
 
       <div class="control-group">
-        <%= f.label :body, class: 'control-label' %>
+        <%= f.label 'Статья', class: 'control-label' %>
         <div class="controls">
           <%= f.text_area :body, rows: 10, style: 'width: 400px;' %>
         </div>
       </div>
 
       <div class="control-group">
-        <%= f.label :published, class: 'control-label' %>
+        <%= f.label 'Опубликовать?', class: 'control-label' %>
         <div class="controls">
-          <%= f.check_box :published %>
+          <%= f.check_box :published, style: 'position: absolute!important; z-index:33!important;' %>
           <label class="lbl"></label>
         </div>
       </div>
 
       <div class="control-group">
-        <%= f.label :image, class: 'control-label' %>
+        <%= f.label 'Картинка', class: 'control-label' %>
         <div class="controls">
 
           <%= f.file_field :image %>

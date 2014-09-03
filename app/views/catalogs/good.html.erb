@@ -1,3 +1,15 @@
+<%= link_to 'Назад', :back %>
+
+<div id="blueimp-gallery" class="blueimp-gallery">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
 <h1>
   <%= @good.title %>
 </h1>
@@ -5,24 +17,37 @@
 <div class="row-fluid">
   <div class="span6">
 
-    <div style="width: 300px; height: 250px;overflow: hidden;">
+    <div class="row-fluid">
 
-      <%= image_tag(asset_path(@good.item_attachments.first.image.url), width: 300, height: 600, class: 'preview') %>
+      <div class="span6">
+        <%= image_tag(asset_path(@good.item_attachments.first.image.url(:large)), width: 300, height: 600, class: 'preview') %>
+      </div>
 
-    </div>
+      <% @good.item_attachments.each_slice(3) do |attachments| %>
 
-    <ul class="inline pics">
-      <% @good.item_attachments.each do |pic| %>
-          <li>
-            <%= image_tag(pic.image.url(:thumb)) %>
-          </li>
+          <div class="span2 pull-left links">
+            <ul class="unstyled">
+
+              <% attachments.each do |pic| %>
+                  <li>
+                    <div class="space-6"></div>
+
+                    <%= link_to asset_path(pic.image.url), title: pic.name do %>
+                        <%= image_tag(asset_path(pic.image.url(:thumb)), title: pic.name) %>
+                    <% end %>
+
+                  </li>
+              <% end %>
+
+            </ul>
+          </div>
       <% end %>
-    </ul>
+    </div>
 
   </div>
 
   <div class="span6">
-    <p>
+    <p style="text-indent: 10px;">
       <%= @good.description %>
     </p>
 

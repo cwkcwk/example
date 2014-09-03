@@ -42,7 +42,7 @@
                       <h4 class="blue">
                         Фото
                       </h4>
-                      <ul class="inline blue" style="height: 70px;">
+                      <ul class="inline blue" style="height: 100px;">
                         <% item.item_attachments.take(4).each do |attach| %>
 
                             <li>
@@ -58,21 +58,28 @@
                   </div>
 
                   <div class="row-fluid">
-                    <h4 class="blue">
-                      Свойства
-                    </h4>
-                    <table class="table table-hover">
-                      <% item.item_properties.each do |property| %>
-                          <tr>
-                            <td style="width: 30%">
-                              <%= property.name %>
-                            </td>
-                            <td style="width: 70%">
-                              <%= property.property %>
-                            </td>
-                          </tr>
-                      <% end %>
-                    </table>
+
+                    <% if item.item_properties.any? %>
+
+                        <h4 class="blue">
+                          Свойства
+                        </h4>
+
+                        <table class="table table-hover">
+                          <% item.item_properties.take(3).each do |property| %>
+                              <tr>
+                                <td style="width: 30%">
+                                  <%= property.name %>
+                                </td>
+                                <td style="width: 70%">
+                                  <%= property.property %>
+                                </td>
+                              </tr>
+                          <% end %>
+                        </table>
+
+                    <% end %>
+
                   </div>
 
                 </div>
@@ -87,8 +94,3 @@
     </h2>
     <%= link_to 'Назад', :back %>
 <% end %>
-
-
-<script>
-
-</script>

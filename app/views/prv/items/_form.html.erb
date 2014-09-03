@@ -18,21 +18,21 @@
     <div class="row-fluid">
 
       <div class="control-group">
-        <%= f.label :title, class: 'control-label' %>
+        <%= f.label 'Название', class: 'control-label' %>
         <div class="controls">
           <%= f.text_field :title %>
         </div>
       </div>
 
       <div class="control-group">
-        <%= f.label :category_id, class: 'control-label' %>
+        <%= f.label 'Категория', class: 'control-label' %>
         <div class="controls">
           <%= f.select :category_id, options_from_collection_for_select(Category.active, :id, :name, f.object.category_id) %>
         </div>
       </div>
 
       <div class="control-group">
-        <%= f.label :description, class: 'control-label' %>
+        <%= f.label 'Описание', class: 'control-label' %>
         <div class="controls">
           <%= f.text_area :description, style: 'width: 500px;', rows: 7 %>
         </div>
@@ -47,14 +47,14 @@
             <div class="row-fluid">
 
               <div class="control-group">
-                <%= c.label :name, class: 'control-label' %>
+                <%= c.label 'Подпись к фотографии', class: 'control-label' %>
                 <div class="controls">
                   <%= c.text_field :name %>
                 </div>
               </div>
 
               <div class="control-group">
-                <%= c.label :image, class: 'control-label' %>
+                <%= c.label 'Фотография', class: 'control-label' %>
                 <div class="controls">
                   <%= c.file_field :image %>
                   <%= image_tag(c.object.image(:thumb)) %>
@@ -72,7 +72,7 @@
 
       <div class="span4">
 
-        <legend>Свойства</legend>
+        <legend>Свойства товара</legend>
 
         <%= f.fields_for :item_properties do |i| %>
             <div class="control-group">
