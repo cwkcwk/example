@@ -28,6 +28,6 @@ module Skyline
 
     config.autoload_paths += %W(#{config.root}/lib)
     config.assets.precompile += Ckeditor.assets
-    
+
   end
 end
