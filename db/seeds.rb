@@ -11,3 +11,16 @@ User.create(
         password: 'horizontkalganov'
     ]
 )
+
+SiteInfo.create(
+    [
+        main_text: '1',
+        phone: '2',
+        fax: '3',
+        email: '4',
+        address: '5',
+        longitude: '6',
+        latitude: '7',
+        second_phone: '8'
+    ]
+)
