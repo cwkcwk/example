@@ -7,7 +7,7 @@
 <% @categories.each do |category| %>
     <%= link_to goods_catalogs_path(category.link) do %>
 
-        <div class="row-fluid hovered">
+        <div class="row-fluid hovered" style="height: 250px!important;">
 
           <div class="span4">
             <%= image_tag(asset_path(category.image.url(:preview))) %>
