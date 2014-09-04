@@ -11,7 +11,6 @@
 //= require jquery.flexslider
 //= require blueimp-gallery-all
 //= require logistics
-//= require ckeditor/init
 //= require_tree .
 
 $(window).load(function () {
