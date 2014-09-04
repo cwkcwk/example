@@ -29,6 +29,11 @@ Skyline::Application.routes.draw do
 
     root to: 'root#index'
 
+    resources :site_infos do
+      collection do
+        get 'info', action: :info
+      end
+    end
     resources :sliders
     resources :articles
     resources :categories do

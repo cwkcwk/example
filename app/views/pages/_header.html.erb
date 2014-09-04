@@ -5,7 +5,7 @@
 <div class="row-fluid">
   <div class="span5 pull-left">
     <%= link_to root_path do %>
-        <%= image_tag(asset_path('logo.png'), height: '60', width: '140') %>
+        <%= image_tag(asset_path(@site_info.logo.url(:main)), height: '60', width: '140') %>
         <h3 style="padding-top: 5px">
           ООО "Горизонт-текстиль"
         </h3>
@@ -29,7 +29,7 @@
     <div class="row-fluid">
       <div class="span12">
         <h3 class="pull-right">
-          <i class="fa fa-phone"></i> +7(960) 506-34-55
+          <i class="fa fa-phone"></i> <%= @site_info.phone %>
         </h3>
       </div>
     </div>

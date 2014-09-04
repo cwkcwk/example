@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Main text:</strong>
+  <%= @site_info.main_text %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @site_info.phone %>
+</p>
+
+<p>
+  <strong>Fax:</strong>
+  <%= @site_info.fax %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @site_info.email %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @site_info.address %>
+</p>
+
+<%= link_to 'Edit', edit_site_info_path(@site_info) %> |
+<%= link_to 'Back', site_infos_path %>

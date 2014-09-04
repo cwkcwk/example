@@ -3,21 +3,20 @@
 </h1>
 
 <p>
-  <strong> Телефон: </strong> +7(960) 506-34-55
+  <strong> Телефон: </strong> <%= @site_info.phone %>
 </p>
 
 <p>
   <strong> Email: </strong>
-  <a href="mailto:kalganov2181@mail.ru?subject=Заказ" target="_blank">kalganov2181@mail.ru</a>
+  <a href="<%= "mailto:#{@site_info.email}?subject=Заказ" %>" target="_blank"><%= @site_info.email %></a>
 </p>
 
 <p>
-  <strong> Факс: </strong> +7 (4932) 58-58-98
+  <strong> Факс: </strong> <%= @site_info.fax %>
 </p>
 
 <p>
-  <strong> Адрес: </strong> Ивановская область, Комсомольский район,
-  с. Подозерский, ул. Индустриальная, дом 1А.
+  <strong> Адрес: </strong> <%= @site_info.address %>
 </p>
 
 <p><strong>Наше местоположение на карте:</strong></p>
@@ -29,21 +28,24 @@
     ymaps.ready(init);
 
     var myMap, myPlacemark;
+    var latitude = <%= @site_info.latitude %>;
+    var longitude = <%= @site_info.longitude %>;
+    var address = '<%= @site_info.address %>';
 
     function init() {
         myMap = new ymaps.Map("map",
                 {
-                    center: [57.216513, 40.340009],
+                    center: [latitude, longitude ],
                     zoom: 16
                 });
         myMap.controls
                 .add('zoomControl', { left: 10, top: 10 })
                 .add('typeSelector');
 
-        myPlacemark = new ymaps.Placemark([57.216513, 40.340009],
+        myPlacemark = new ymaps.Placemark([latitude, longitude],
                 {
                     hintContent: 'Мы здесь!',
-                    balloonContent: 'Комсомольский район, с. Подозерский, ул. Индустриальная, дом 1А'
+                    balloonContent: address
                 });
 
         myMap.geoObjects.add(myPlacemark);

@@ -1,0 +1,82 @@
+<%= form_for [:prv, @site_info], html: {class: 'form-horizontal'} do |f| %>
+
+    <% if @site_info.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@site_info.errors.count, "error") %> prohibited this prv_item from being saved:</h2>
+
+          <ul>
+            <% @site_info.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <legend> Информация на сайте:</legend>
+
+    <div class="control-group">
+      <%= f.label 'Телефон', class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :phone %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label 'Второй телефон', class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :second_phone %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label 'Факс', class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :fax %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label 'Email', class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :email %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label 'Адрес', class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :address, style: 'width: 430px;' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label 'Широта и долгота для карты', class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :latitude, placeholder: 'Широта' %>
+        <%= f.text_field :longitude, placeholder: 'Долгота' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label 'Лого', class: 'control-label' %>
+      <div class="controls">
+        <%= f.file_field :logo %>
+        <%= image_tag asset_path(f.object.logo.url(:thumb)) %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label 'Текст под слайдером', class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :main_text, style: 'width: 700px; height: 200px' %>
+      </div>
+    </div>
+
+    <div class="controls-group">
+      <label class="control-label"></label>
+      <div class="controls">
+        <%= f.submit 'Сохранить', class: 'btn btn-mini btn-success' %>
+      </div>
+    </div>
+
+<% end %>

@@ -20,25 +20,31 @@
 <div class="row-fluid">
 
   <div class="span3">
-    <i class="fa fa-phone"></i> +7 (960) 506-34-55 <br/>
-    <i class="fa fa-phone"></i> +7 (926) 283-28-58
+    <i class="fa fa-phone"></i> <%= @site_info.phone %> <br/>
+
+    <% unless @site_info.second_phone.blank? %>
+        <i class="fa fa-phone"></i> <%= @site_info.second_phone %>
+    <% end %>
+
   </div>
 
   <div class="span3">
-    факс: +7 (4932) 58-58-98 <br/>
+    <% unless @site_info.fax.blank? %>
+        факс: <%= @site_info.fax %> <br/>
+    <% end %>
 
     <p>
-      <a href="mailto:kalganov2181@mail.ru?subject=Заказ" target="_blank">kalganov2181@mail.ru</a>
+      <a href="<%= "mailto:#{@site_info.email}?subject=Заказ" %>" target="_blank"><%= @site_info.email %></a>
     </p>
 
   </div>
 
-  <div class="span3">
+  <div class="span4">
     <p>
-      Ивановская область, Комсомольский район, <br/> с. Подозерский, ул. Индустриальная, дом 1А.
+      <%= @site_info.address %>
     </p>
   </div>
-  <div class="span3">
+  <div class="span2">
     &copy;Горизонт <%= Date.current.year %>
   </div>
 

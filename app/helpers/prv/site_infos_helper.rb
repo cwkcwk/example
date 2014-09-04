@@ -1,0 +1,2 @@
+module Prv::SiteInfosHelper
+end
