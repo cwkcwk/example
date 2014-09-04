@@ -34,6 +34,12 @@ namespace :deploy do
       # Restarts Phusion Passenger
       execute :touch, release_path.join('tmp/restart.txt')
     end
+
+  end
+
+  desc "reload the database with seed data"
+  task :seed do
+    run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
   end
 
   after :publishing, :restart
