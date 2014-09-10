@@ -33,7 +33,7 @@
                   <div class="row-fluid">
 
                     <p class="item-description">
-                      <%= item.description %>
+                      <%= item.description.length > 368 ? "#{item.description.first(365).html_safe}..." : item.description.html_safe %>
                     </p>
                   </div>
 
