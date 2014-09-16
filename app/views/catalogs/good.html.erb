@@ -32,7 +32,7 @@
                   <li>
                     <div class="space-6"></div>
 
-                    <%= link_to asset_path(pic.image.url), title: pic.name do %>
+                    <%= link_to asset_path(pic.image.url), title: pic.name, class: 'gallery-item' do %>
                         <%= image_tag(asset_path(pic.image.url(:thumb)), title: pic.name) %>
                     <% end %>
 
