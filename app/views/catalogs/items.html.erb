@@ -46,7 +46,7 @@
                         <% item.item_attachments.take(4).each do |attach| %>
 
                             <li>
-                              <%= link_to asset_path(attach.image.url), title: attach.name do %>
+                              <%= link_to asset_path(attach.image.url), title: attach.name, class: 'gallery-item' do %>
                                   <%= image_tag(asset_path(attach.image.url(:thumb)), title: attach.name) %>
                               <% end %>
                             </li>

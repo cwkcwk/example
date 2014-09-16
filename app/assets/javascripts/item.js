@@ -1,5 +1,5 @@
 $(function () {
-    $('.links').click(function () {
-        blueimp.Gallery($(this).find('a'), {event: event || window.event, index: event.target.src});
+    $('.gallery-item').click(function () {
+        blueimp.Gallery($(this), {event: event || window.event, index: event.target.src});
     })
 });
