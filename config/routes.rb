@@ -41,7 +41,11 @@ Skyline::Application.routes.draw do
         get :order_position, action: :order_position
       end
     end
-    resources :items
+    resources :items do
+      member do
+        get 'change_order', action: :change_order
+      end
+    end
   end
 
 end

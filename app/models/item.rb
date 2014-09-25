@@ -5,6 +5,8 @@ class Item < ActiveRecord::Base
   validates :title, :description, :category_id, presence: true
   validates :title, uniqueness: true
 
+  scope :ordered, -> {order('order_id desc')}
+
   belongs_to :category
 
   has_many :item_attachments, dependent: :destroy
@@ -15,7 +17,7 @@ class Item < ActiveRecord::Base
 
   accepts_nested_attributes_for :item_properties, allow_destroy: true
 
-  has_many :item_sizes
+  has_many :item_sizes, dependent: :destroy
 
   accepts_nested_attributes_for :item_sizes, allow_destroy: true
 

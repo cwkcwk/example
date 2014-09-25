@@ -4,8 +4,7 @@ class CatalogsController < ApplicationController
   end
 
   def items
-    @items = Category.find_by(link: params['category_name']).items
-
+    @items = Category.find_by(link: params['category_name']).items.ordered
   end
 
   def good

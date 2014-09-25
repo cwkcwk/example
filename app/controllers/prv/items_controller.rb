@@ -1,11 +1,11 @@
 module Prv
   class ItemsController < RootController
-    before_action :set_prv_item, only: [:show, :edit, :update, :destroy]
+    before_action :set_prv_item, only: [:show, :edit, :update, :destroy, :change_order]
 
     # GET /prv/items
     # GET /prv/items.json
     def index
-      @prv_items = Item.all
+      @prv_items = Item.ordered
     end
 
     # GET /prv/items/1
@@ -62,6 +62,16 @@ module Prv
       end
     end
 
+    def change_order
+      begin
+        @prv_item.update_attribute(:order_id, @prv_item.order_id + params[:direction].to_i)
+      rescue
+        raise Exception => e
+      end
+      redirect_to action: :index
+
+    end
+
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_prv_item
@@ -73,6 +83,8 @@ module Prv
       params.require(:item).permit(:title,
                                    :category_id,
                                    :description,
+                                   :order_id,
+                                   :direction,
                                    item_attachments_attributes: [
                                        :id,
                                        :name,
