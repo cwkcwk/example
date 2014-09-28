@@ -6,6 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ckeditor-jquery
 //= require twitter/bootstrap
 //= require jquery_nested_form
 //= require jquery.flexslider

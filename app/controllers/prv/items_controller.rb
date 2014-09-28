@@ -65,11 +65,13 @@ module Prv
     def change_order
       begin
         @prv_item.update_attribute(:order_id, @prv_item.order_id + params[:direction].to_i)
+
+        respond_to do |format|
+          format.js { render partial: 'prv/items/data_table' }
+        end
       rescue
         raise Exception => e
       end
-      redirect_to action: :index
-
     end
 
     private

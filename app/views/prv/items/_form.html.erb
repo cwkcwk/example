@@ -1,3 +1,5 @@
+<script src="//cdn.ckeditor.com/4.4.5/standard/ckeditor.js"></script>
+
 <%= nested_form_for [:prv, @prv_item], html: {class: 'form-horizontal'} do |f| %>
 
     <% if @prv_item.errors.any? %>
@@ -131,3 +133,9 @@
       <%= f.submit 'Сохранить', class: 'btn btn-mini btn-success' %>
     </div>
 <% end %>
+
+<script>
+  $(function(){
+      CKEDITOR.replace( '#item_description' );
+  })
+</script>
