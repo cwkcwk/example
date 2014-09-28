@@ -34,7 +34,15 @@
               <th></th>
             </tr>
             </thead>
-            <%= render partial: 'prv/items/data_table', locals: {c: c} %>
+            <tbody>
+
+            <% @prv_items.where(category_id: c).each do |prv_item| %>
+
+                <%= render partial: 'prv/items/data_table', locals: {prv_item: prv_item} %>
+
+            <% end %>
+
+            </tbody>
           </table>
         </div>
     <% end %>

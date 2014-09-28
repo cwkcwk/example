@@ -5,7 +5,7 @@ class Item < ActiveRecord::Base
   validates :title, :description, :category_id, presence: true
   validates :title, uniqueness: true
 
-  scope :ordered, -> {order('order_id desc')}
+  scope :ordered, -> { order('order_id desc') }
 
   belongs_to :category
 
@@ -20,6 +20,14 @@ class Item < ActiveRecord::Base
   has_many :item_sizes, dependent: :destroy
 
   accepts_nested_attributes_for :item_sizes, allow_destroy: true
+
+  def self.search(params)
+
+    default_str = "%#{params[:search_str]}%"
+    translit_str = "%#{Russian.translit(params[:search_str]).gsub(/\s/, '-').downcase}%"
+
+    where('link like ? or description like ?', translit_str, default_str).ordered
+  end
 
   private
 
