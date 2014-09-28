@@ -17,7 +17,7 @@
     <div class="row-fluid">
       <div class="span10">
         <h4>
-          <%= @article.preview %>
+          <%= @article.preview.html_safe %>
         </h4>
       </div>
     </div>
@@ -27,7 +27,7 @@
     <div class="row-fluid">
       <div class="span10">
         <p>
-          <%= @article.body %>
+          <%= @article.body.html_safe %>
         </p>
       </div>
     </div>
