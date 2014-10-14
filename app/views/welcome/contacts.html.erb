@@ -10,10 +10,11 @@
   <strong> Email: </strong>
   <a href="<%= "mailto:#{@site_info.email}?subject=Заказ" %>" target="_blank"><%= @site_info.email %></a>
 </p>
-
-<p>
-  <strong> Факс: </strong> <%= @site_info.fax %>
-</p>
+<% if @site_info.fax.present? %>
+    <p>
+      <strong> Факс: </strong> <%= @site_info.fax %>
+    </p>
+<% end %>
 
 <p>
   <strong> Адрес: </strong> <%= @site_info.address %>
